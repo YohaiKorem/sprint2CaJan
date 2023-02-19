@@ -75,7 +75,7 @@ function drawText(line, idx) {
     let {txt, size, align,strokeColor, fillColor,font, x, y} = line
         if(gMeme.selectedLineIdx === idx){
             let txtWidth = measureTxt(txt)
-            drawRect(x, y, txtWidth, size)
+            drawLine(x, y, txtWidth, size)
         }
         gCtx.lineWidth = 2
         gCtx.strokeStyle = strokeColor
@@ -85,6 +85,16 @@ function drawText(line, idx) {
         gCtx.textBaseline = 'middle'
         gCtx.fillText(txt, x , y, gCanvas.width)
         gCtx.strokeText(txt, x, y, gCanvas.width) 
+}
+
+function drawLine(x, y, txtWidth, size){
+  gCtx.beginPath();
+  gCtx.strokeStyle = 'red'
+  gCtx.lineWidth = 3
+
+gCtx.moveTo(x-txtWidth, y+size);
+gCtx.lineTo(x+txtWidth, y+size);
+gCtx.stroke();
 }
 
 function onAddLine(){
@@ -139,7 +149,7 @@ function drawRect(x, y, txtWidth, size) {
   gCtx.beginPath()
     gCtx.strokeStyle = 'red'
     if(!txtWidth) txtWidth = 100
-    gCtx.strokeRect(x/2, y-size, x+txtWidth, y+size)
+    gCtx.strokeRect(x-txtWidth, y-size, x+txtWidth, y+size)
   }
 
   function onRemoveLine(){
