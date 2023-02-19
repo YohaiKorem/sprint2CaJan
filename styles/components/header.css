@@ -11,12 +11,12 @@
 /* .main-header .main-nav{
 justify-self: end;
 } */
-/* .main-nav{
+.main-nav{
   display: flex;
   min-width: 200px;
   margin: 2em 0 2em;
   justify-content: space-between;
-} */
+}
 
 .clean-list{
   align-items: center;
