@@ -45,7 +45,7 @@ cursor: pointer;
    width: clamp(40px, 80px, 100px);
    height: clamp(40px, 80px, 100px);
    border-radius: 30%;
-   font-size: clamp(.35em, 75em, 1em);
+   font-size: clamp(.35em, .75em, 1em);
    text-align: center;
 }
 
