@@ -15,7 +15,6 @@ function getNextLineY(){
    (!gCanvas) ? gNextLineY = 300 : gNextLineY = gCanvas.height/2
 }
 
-
 function changeEmojiPageIdx(changeIdxBy){
 gEMojisPageIdx += changeIdxBy
 console.log(gEMojisPageIdx);
@@ -34,9 +33,6 @@ function getEmojisForDisplay(){
 //   return emoji.character
 //  })
 //  }
-
-
-
 
 function setCurrImg(imgId){
    const img = getImgById(imgId)
@@ -120,11 +116,9 @@ function _createLine(){
     }
  }
 
-
 function  setTxt(txt){
    const selectedLineIdx = gMeme.selectedLineIdx 
    gMeme.lines[selectedLineIdx].txt = txt
-   
 }
 
 function getImgById(imgId){
@@ -209,5 +203,3 @@ function _saveMemeToStorage(val){
 function loadSavedMeme(){
    gMeme = loadFromStorage(MEMES_STORAGE_KEY)
 }
-
-

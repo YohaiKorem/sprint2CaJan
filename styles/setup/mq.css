@@ -1,17 +1,6 @@
 /* MOBILE */
-
-/* @media (max-width:700px){
-    ul.search-tags.flex.clean-list{
-      
-    flex-direction: row;
-    }
-} */
-
-
-
 @media (max-width: 940px) {
 /* BASICS */
-
     body{
         background-color: var(--clr4);
         }
@@ -23,22 +12,19 @@
         .main-layout{
             grid-template-columns: 10px 1fr 10px;
         }
-
-
-
         /* HEADER */
+
+
+
     .main-header .main-nav {
       position: fixed;
       top: 13%;
       right: 0;
-     
-     
       transform: translateX(110%);
       background-color: var(--clr1);
       color: white;
       transition: transform 0.6s;
     }
-
 
 .main-nav.open{
     transform: translateX(0);
@@ -73,9 +59,9 @@ padding-inline-end: 10%
 grid-template-areas: 
 'saved'
 'gallery'
-'about'
-;
-place-items: center;}
+'about';
+place-items: center;
+}
 
 .hidden-logo{
     padding-inline-start: 10%;
@@ -92,7 +78,6 @@ grid-area: saved;
     grid-area: about;
     }
     
-
 .menu-btn{
     display: block;
     width: 50px;
@@ -101,14 +86,12 @@ grid-area: saved;
     margin-inline-end: 20px;
 }
 
-
 .bar{
     width: 35px;
   height: 5px;
   background-color: rgb(255, 255, 255);
   margin: 6px 0;
 }
-
 
 /* SEARCH-BAR*/
 .search-bar{
@@ -120,6 +103,7 @@ grid-area: saved;
 .clear-filter{
     margin-inline-end: 50%;
 }
+
 .flexible-btn{
     margin-inline-start: 50%
 }
@@ -136,43 +120,37 @@ input[name='tags-search-input']{
     font-size: 2em;
     grid-row: 1;
     place-self: center;
-
 }
+
 ul.search-tags{
     grid-row: 3;
     grid-column: 1;
 grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
 grid-template-rows: 1fr;
 }
+
 .search-tags li{
     display: inline-block;
     grid-row: 1;
 }
 
-
-
 /* GALLERY */
-
 .gallery-container{
     grid-template-columns: repeat(2, 45%);
-
-
 }
 /* EDITOR */
 .editor-container{
-
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    /* max-height: 80vh; */
+    grid-template-rows: .8fr 1fr;
     grid-template-areas: 
     'canvas'
-    'btns'
-    ;
+    'btns';
     grid-auto-flow: dense;
-    /* row-gap: 40px; */
-align-items: center;
+align-items: start;
 padding-block-start: 10px;
+justify-content: start;
 }
-
 
 input[name='meme-line-input']{
     align-self: center;
@@ -182,10 +160,8 @@ input[name='meme-line-input']{
 .canvas-container{
     justify-content: center;
 }
-
 /* ABOUT*/
 .about{
-    
 grid-template-rows: 3fr 1fr 2fr 1fr;
 grid-template-columns: 1fr;
 place-items: center;
@@ -201,18 +177,19 @@ place-items: center;
     grid-row: 2;
     grid-column: 1;
 }
+
 .about-p{
     text-align: center;
     grid-row: 3;
     grid-column: 1;
     margin-inline: 2rem;
 }
+
 .social-links{
     grid-row: 4;
     grid-column: 1;
     /* width: fit-content; */
-}
-
+    }
 }
 
 /* DESKTOP */
@@ -221,9 +198,7 @@ place-items: center;
  .main-layout{
      grid-template-columns: 50px 1fr 50px;
     }  
-
 /* HEADER */
-
 .main-header .main-nav a{
     position: relative;
 }
@@ -248,13 +223,10 @@ place-items: center;
     transform: scale(1); 
   }
 
-
   .main-nav li{
     margin-inline-start: 20px;
   }
-
   /* SEARCH-BAR */
-
   .search-bar{
     font-size: 0.75em;
 padding: 2em 0 2em;
@@ -265,32 +237,21 @@ margin-inline-end: 1em;
 }
 
 input[name='tags-search-input']{
-
     background-position: 95% 5%;
     text-indent: 20px;
     font-size: 3em;
-    /* border: 0px; */
-    /* grid-column: 1; */
-    /* position: absolute; */
+    
 }
 
-
 .search-tags{
-    /* display: grid; */
     grid-column: 3;
     grid-row: 1/-1;
-/* justify-content: space-between; */
-/* align-items: center; */
 }
 
 .search-tags li{
     margin-inline-end: 10px;
 }
 
-
-/* .clear-filter{
-    margin-inline-end: 300%;
-} */
 .gallery-btns-container{
     grid-column: 2;
     grid-row: 1;
@@ -302,14 +263,12 @@ input[name='tags-search-input']{
 }
 
 /* GALLERY */
-
 .gallery-container{
      grid-template-columns: repeat(3, 30%);
 
      padding-block-end: 20px;
     }
 /* EDITOR */
-
 .editor-container{
     padding-block: 10px;
     grid-template-columns: 1fr 1fr;
@@ -318,7 +277,6 @@ input[name='tags-search-input']{
 }
 
 .editor-btns-container button{
-
     width: 100px;
     height: 100px;
 }
@@ -328,13 +286,12 @@ input[name='meme-line-input']{
     width: 90%;
 height: 100px;
 }
+
 .choose-font{
     height: 100px;
 }
-
 /* ABOUT */
 .about{
-
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);
 }

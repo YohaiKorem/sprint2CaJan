@@ -1,7 +1,6 @@
 'use strict'
 let gCurrLang = 'en'
 
-
 let gTrans = {
     'memes-tab':{
         en: 'Memes',
@@ -14,6 +13,10 @@ let gTrans = {
     'about-tab':{
         en:'about',
         he:'אודות'
+    },
+    'clear-filter':{
+        en:'Clear filter',
+        he: 'נקה חיפוש'
     },
     'flexible':{
         en:'I`m flexible',
@@ -49,15 +52,9 @@ en:'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, harum ducimu
     }
 }
 
-
-
-
-
-
 function  setLang(lang){
     gCurrLang = lang
 }
-
 
 function getTrans(transKey){
     const transMap = gTrans[transKey]
@@ -67,7 +64,6 @@ function getTrans(transKey){
     return translation
 
 }
-// getDataTrans()
 function doTrans(){
   let els =   document.querySelectorAll('[data-trans]')
   els.forEach(el =>{
