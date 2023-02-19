@@ -83,18 +83,14 @@ function drawText(line, idx) {
         gCtx.font = `${size}px ${font}`
         gCtx.textAlign = align
         gCtx.textBaseline = 'middle'
-        // y= translatedY(y)
-        gCtx.fillText(txt, x , y, gCanvas.width) // Draws (fills) a given text at the given (x, y) position.
-        gCtx.strokeText(txt, x, y, gCanvas.width) // Draws (strokes) a given text at the given (x, y) position.
+        gCtx.fillText(txt, x , y, gCanvas.width)
+        gCtx.strokeText(txt, x, y, gCanvas.width) 
 }
-
-// / gCanvas.width + 10
 
 function onAddLine(){
     addLine()
     drawCanvas() 
 }
-
 
   function onSetTxt(txt){
       setTxt(txt)
@@ -199,6 +195,7 @@ const{x,y} = pos
  isOnTxt(x,y)
 drawCanvas()
     }
+    
       function onMove(ev){
         if(!gMeme.lines[gMeme.selectedLineIdx].isDrag) return
         const pos = getEvPos(ev)
@@ -206,107 +203,27 @@ drawCanvas()
          moveTxt(x,y)
          drawCanvas()
       }
+
       function onUp(ev){
         const pos = getEvPos(ev)
         const{x,y} = pos
         moveTxt(x,y, 'stop')
-
       }
-
-  function    onShare(){
-      const imgDataUrl = gCanvas.toDataURL('image/jpeg') // Gets the canvas content as an image format
-  
-      // A function to be called if request succeeds
-      function onSuccess(uploadedImgUrl) {
-          // Encode the instance of certain characters in the url
-          const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
-          window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}`)
-      }
-      // Send the image to the server
-      doShareImg(imgDataUrl, onSuccess)
-  }
-  
-  function doShareImg(imgDataUrl, onSuccess) {
-      // Pack the image for delivery
-      const formData = new FormData()
-      formData.append('img', imgDataUrl)
-  
-      // Send a post req with the image to the server
-      const XHR = new XMLHttpRequest()
-      XHR.onreadystatechange = () => {
-          // If the request is not done, we have no business here yet, so return
-          if (XHR.readyState !== XMLHttpRequest.DONE) return
-          // if the response is not ok, show an error
-          if (XHR.status !== 200) return console.error('Error uploading image')
-          const { responseText: url } = XHR
-          // Same as
-          // const url = XHR.responseText
-  
-          // If the response is ok, call the onSuccess callback function, 
-          // that will create the link to facebook using the url we got
-          console.log('Got back live url:', url)
-          onSuccess(url)
-      }
-      XHR.onerror = (req, ev) => {
-          console.error('Error connecting to server with request:', req, '\nGot response data:', ev)
-      }
-      XHR.open('POST', '//ca-upload.com/here/upload.php')
-      XHR.send(formData)
-  }
 
   function onSave(){
 save()
   }
-
-  // function onSetCustomImg(){
-  //   setCustomImg()
-  //   console.log('download');
-  // }
 
   function onLoadSavedMeme(){
     closeMenu()
     loadSavedMeme()
     const imgId = gMeme.selectedImgId
     renderEditor(imgId)
-
   }
 
   function onNewMeme(){
    newMeme()
   }
-
-
-  function onImgInput(ev) {
-    loadImageFromInput(ev, drawCanvas)
-}
-
-// CallBack func will run on success load of the img
-function loadImageFromInput(ev, onImageReady) {
-    const reader = new FileReader()
-    // After we read the file
-    reader.onload = function (event) {
-        let img = new Image() // Create a new html img element
-        img.src = event.target.result // Set the img src to the img file we read
-        // Run the callBack func, To render the img on the canvas
-        gCurrImg = createImg(gImgs.length, img.src)
-        img.onload = () => onImageReady(gCurrImg)
-        // onAddImgToData(img)
-        // setCurrImg(gImgs[gImgs.length-1].id)
-        // setMeme(gImgs[gImgs.length-1].id)
-        // Can also do it this way:
-        // img.onload = () => onImageReady(img)
-    }
-    reader.readAsDataURL(ev.target.files[0]) // Read the file we picked
-}
-
-function renderImg(img) {
-    // Draw the img on the canvas
-    // 
-    // console.log(gCurrImg);
-    // // 
-    // console.log(gCurrImg);
-    gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
-}
 
 function  onAddImgToData(imgURL){
   addImgToData(imgURL)
