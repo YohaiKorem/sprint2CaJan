@@ -157,13 +157,11 @@ input[name='meme-line-input']{
     justify-self: center;
 }
 
-
 .custom-img-btn{
     padding: 0;
    width: 60px;
    height: 60px;
 }
-
 
 .canvas-container{
     justify-content: center;

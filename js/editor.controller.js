@@ -137,10 +137,9 @@ function measureTxt(txt){
 
 function drawRect(x, y, txtWidth, size) {
   gCtx.beginPath()
-
     gCtx.strokeStyle = 'red'
     if(!txtWidth) txtWidth = 100
-    gCtx.strokeRect(x/2, y-size, txtWidth+x, size*2)
+    gCtx.strokeRect(x/2, y-size, x+txtWidth, y+size)
   }
 
   function onRemoveLine(){
@@ -195,7 +194,7 @@ const{x,y} = pos
  isOnTxt(x,y)
 drawCanvas()
     }
-    
+
       function onMove(ev){
         if(!gMeme.lines[gMeme.selectedLineIdx].isDrag) return
         const pos = getEvPos(ev)
