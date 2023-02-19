@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: montserrat-regular;
+    scroll-behavior: smooth;
+}
+body{
+    font-size: 1rem;
+}
+img{
+    width: 100%;
+/* grid-column: 1; */
+} 
+a{
+    text-decoration: none;
+}
+.icon{
+    width: 50px;
+}
+
+small{
+    font-family: montserrat-thin;
+    color: #ffffff;
+    
+}
+
+button:hover{
+cursor: pointer;
+}
+
+.menu-btn{
+    display: none;
+}
+

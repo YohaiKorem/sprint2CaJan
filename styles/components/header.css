@@ -1,0 +1,39 @@
+.main-header{
+  grid-auto-flow: column;
+    background-color: var(--clr1);
+    align-items: center;
+    box-shadow: inset 0px -6px 0 var(--clr6)
+}
+
+/* .main-header .nav{
+   height: 100%; 
+} */
+/* .main-header .main-nav{
+justify-self: end;
+} */
+/* .main-nav{
+  display: flex;
+  min-width: 200px;
+  margin: 2em 0 2em;
+  justify-content: space-between;
+} */
+
+.clean-list{
+  align-items: center;
+}
+
+
+.main-header .main-nav a {
+  font-size:2.25rem ;
+   color: #ffffff; ;
+}
+
+select[name='select-lang']{
+  position: absolute;
+  top: 8px;
+  border-radius: 10%;
+}
+
+.main-header .logo{
+cursor: pointer;
+}

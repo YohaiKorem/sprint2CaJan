@@ -1,0 +1,11 @@
+.main-layout{
+    display: grid;
+}
+
+.main-layout > .full {
+    grid-column: 1 / -1;
+  }
+  .main-layout > *:not(.full) {
+    grid-column: 2;
+  }
+  

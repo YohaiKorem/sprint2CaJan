@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bad8dc2691.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>MEMEGEN</title>
+</head>
+<body class="main-layout" onload="onInit()">
+    <header class="main-header full main-layout">
+        <select name="select-lang" onchange="onSetLang(this.value)">
+            <option value="en">English</option>
+            <option value="he">עברית</option>
+        </select>
+        <section class="nav flex space-between">
+            <div class="logo" onclick="renderGallery()"><img src="img/logo/LOGO.png" class="logo-img"></div>
+            <nav class="main-nav">
+                <ul class="flex clean-list">
+                    <div class="logo hidden-logo"><img src="img/logo/LOGO.png" class="logo-img"></div>
+                    <li><a href="#" onclick="onLoadSavedMeme()" data-trans="memes-tab">Memes</a></li>
+                    <li><a href="#" onclick="renderGallery()" data-trans="gallery-tab">Gallery</a></li>
+                    <li><a href="#about" data-trans="about-tab">About</a></li>
+                </ul>
+            </nav>
+            <button class="menu-btn" onclick="openMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+        </section>
+    </header>
+
+    <section class="search-bar full" >
+        <div class="gallery-btns-container">
+            <button class="clear-filter" onclick="onClearFilter()">Clear filter</button>
+            <button class="flexible-btn" onclick="onFlexible()" data-trans="flexible">I`m flexible</button>
+        </div>
+        <input type="text" placeholder="Enter search keyword" data-trans="search-placeholder"  name="tags-search-input" onkeyup="onSetFilter(this.value)">
+        <ul class="search-tags flex clean-list" >
+        </ul>
+    </section>
+
+    <main class="gallery-container full">
+    </main>
+
+
+<section class="editor-container hidden full">
+    <div class="canvas-container flex">
+        <canvas id="canvas" ></canvas>
+    </div>
+        <section class="editor-btns-container">
+            <input type="text" name="meme-line-input" onkeyup="onSetTxt(this.value)">
+            <button class="select-line-btn" onclick="onSelectLine()"><img src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="" class="icon"></button>
+            <button class="add-line-btn" onclick="onAddLine()"><img src="ICONS/add.png" alt="" class="icon"></button>
+            <button class="remove-line-btn" onclick="onRemoveLine()"><img src="ICONS/trash.png"  class="icon"></button>
+            <button class="font-grow-btn" onclick="onFontGrow()"><img src="ICONS/increase font - icon.png"  class="icon"></button>
+            <button class="font-shrink-btn" onclick="onFontShrink()"><img src="ICONS/decrease font - icon.png"  class="icon"></button>
+            <button class="text-align-left-btn" onclick="onSetTxtAlign('end')"><img src="ICONS/align-to-left.png"  class="icon"></button>
+            <button class="text-align-center-btn" onclick="onSetTxtAlign('center')"><img src="ICONS/center-text-alignment.png"  class="icon"></button>
+            <button class="text-align-right-btn" onclick="onSetTxtAlign('start')"><img src="ICONS/align-to-right.png"  class="icon"></button>
+            <select class="choose-font" onchange="onSetFont(this.value)">
+<option value="impact">Impact</option>
+<option value="david">David</option>
+<option value="arial">Arial</option>
+<option value="times new roman">Times new roman</option>
+<option value="verdana">Verdana</option>
+<option value="tahoma">Tahoma</option>
+<option value="Trebuchet MS">Trebuchet MS</option>
+<option value="georgia">Georgia</option>
+<option value="garamond">Garamond</option>
+<option value="Courier New">Courier New</option>
+<option value="Brush Script MT">Brush Script MT</option>
+            </select>
+            <button class="stroke-color-btn" ><input type="color" name="stroke-color" onchange="onChangeStrokeColor(this.value)"> <img src="ICONS/text stroke.png" alt="" class="icon"></button>
+            <button class="fill-color-btn"><input type="color" name="fill-color" onchange="onChangeFillColor(this.value)"> <img src="ICONS/paint-board-and-brush.png" alt="" class="icon"></button>
+            <ul class="emoji-container clean-list"></ul>
+            <button class="share-btn" onclick="onShare()" data-trans="share">Share</button>
+            <button class="save-btn" onclick="onSave()" data-trans="save">Save</button>
+            <button class="custom-img-btn" data-trans="custom-picture">Use custom picture
+                <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+            </button>
+        </section>
+</section>
+
+<section class="about full" id="about">
+  <div class="about-img-container flex">
+      <img src="img/yohai/yohai.jpg" class="about-img">
+  </div> 
+    <h2 class="about-heading" data-trans="my-name">Yohai Korem</h2>
+    <p class="about-p" data-trans="lorem">Lorem, ipsum dolor sit amet cons
+        ectetur adipisicing elit. Odit, harum ducimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero dolorem deleniti nemo aperiam neque a magni laudantium nihil tempore ea id excepturi inventore ipsum, aspernatur nam maxime sint quibusdam eligendi.</p>
+        <ul class="clean-list social-links flex">
+            <li class="icon-container"><i class="fa-brands fa-linkedin-in"></i></li>
+            <li class="icon-container"><i class="fa-brands fa-facebook-f"></i></li>
+            <li class="icon-container"><i class="fa-brands fa-github"></i></li>
+        </ul>
+</section>
+
+<footer class="main-footer main-layout full">
+    <div class="logo"><img src="img/logo/LOGO.png" class="logo-img"></div>
+    <small data-trans="all-rights-reserved">all rights reserved 2019</small>
+</footer>
+<div class="backdrop" onclick="closeMenu()"></div>
+
+    <script src="js/services/utils.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/i18n.service.js"></script>
+    <script src="js/services/gallery.service.js"></script>
+    <script src="js/services/editor.service.js"></script>
+    <script src="js/services/saved.memes.service.js"></script>
+    <script src="js/gallery.controller.js"></script>
+    <script src="js/editor.controller.js"></script>
+    <script src="js/saved.memes.controller.js"></script>
+</body>
+</html>

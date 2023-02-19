@@ -1,0 +1,46 @@
+.about{
+    background-color: #fff;
+    display: grid;
+    align-items: center;
+}
+
+.about-img{
+    
+    width: 60%;
+    border-radius: 50%;
+}
+
+.about-img-container{
+    width: 100%;
+justify-content: center;
+}
+
+.about-heading{
+    color: var(--clr1);
+    font-weight: 900;
+    font-size: 1.375rem;
+}
+.about-p{
+    font-size: 1.5rem;
+}
+
+.social-links{
+    gap: 10px;
+}
+
+.fa-facebook-f{
+    padding-inline: 10px;
+
+}
+
+.fa-brands{
+    font-size: 50px;
+    color: white
+}
+
+.icon-container{
+    padding-inline: 10px;
+    padding-block: 10px;
+    background-color: var(--clr1);
+    border-radius: 10px;
+}

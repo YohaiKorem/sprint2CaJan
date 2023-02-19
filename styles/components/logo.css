@@ -1,0 +1,19 @@
+.logo{
+    min-width: 20%;
+    max-width: 250px;
+    align-self: center;
+    margin: 2em 0 2em;
+}
+
+.logo .logo-img{
+    width: 100%;
+}
+
+.hidden-logo{
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.hidden-logo.open{
+    opacity: 1;
+}

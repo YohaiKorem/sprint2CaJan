@@ -1,0 +1,11 @@
+.main-footer{
+    /* grid-column: 2; */
+background-color: var(--clr1);
+place-items: center;
+/* margin-block-start: 10px; */
+}
+
+.main-footer small{
+margin-bottom: 40px;
+font-size: 20px;
+}

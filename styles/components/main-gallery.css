@@ -1,0 +1,26 @@
+.gallery-container{
+    grid-column: 2;
+    display: grid;
+   
+    grid-auto-flow: dense;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-rows: 1fr;
+    background-color: var(--clr4);
+    justify-content: center;
+    margin-block: 1rem;
+}
+
+.gallery-container .img{
+max-width: 300px;
+}
+
+/* .imgs-container :nth-child(1n){
+    grid-column: 1;
+}
+.imgs-container :nth-child(2n){
+    grid-column: 2;
+}
+.imgs-container :nth-child(3n){
+    grid-column: 3;
+} */

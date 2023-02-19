@@ -1,0 +1,16 @@
+
+
+.flex{
+    display: flex;
+}
+
+.clean-list{
+list-style: none;
+}
+
+.hidden{
+    display: none;
+}
+.flex.space-between{
+    justify-content: space-between;
+}

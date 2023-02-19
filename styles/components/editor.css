@@ -1,0 +1,151 @@
+.editor-container{
+  
+    /* grid-column: 2; */
+    display: grid;
+    background-color: var(--clr4);
+}
+
+.editor-btns-container{
+    width: 100%;
+    justify-self: center;
+grid-area: btns;
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(7, 1fr);
+gap: 10px;
+}
+
+.editor-btns-container button img{
+    width: 100%;
+}
+
+.editor-btns-container button{
+    border-radius: 20%;
+   
+}
+
+
+input[name='meme-line-input']{
+    grid-column: 1/-1;
+    width: 90%;
+    font-size: 250%;
+}
+
+input[name='fill-color'],
+input[name='stroke-color']{
+opacity: 0;
+width: 100%;
+height: 100%;
+position: absolute;
+cursor: pointer;
+}
+
+.select-line-btn{
+    grid-column: 2;
+    grid-row: 2;
+}
+.add-line-btn{
+    grid-column: 3;
+    grid-row: 2;
+}
+.remove-line-btn{
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.font-grow-btn{
+    grid-column: 1;
+    grid-row: 3;
+}
+.font-shrink-btn{
+    grid-column: 2;
+    grid-row: 3;
+}
+.text-align-left-btn{
+    grid-column: 3;
+    grid-row: 3;
+}
+.text-align-center-btn{
+    grid-column: 4;
+    grid-row: 3;
+}
+.text-align-right-btn{
+    grid-column: 5;
+    grid-row: 3;
+}
+
+.choose-font{
+    font-size: 250%;
+    grid-column: 1/4;
+    grid-row: 4;
+}
+
+.stroke-color-btn{
+    position: relative;
+    grid-column: 4;
+    grid-row: 4;
+} 
+.fill-color-btn{
+    position: relative;
+
+     grid-column: 5;
+    grid-row: 4;
+} 
+.emoji-container{
+    background-color:white;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column: 1/-1;
+    grid-row: 5/ 6;
+}
+.right-arrow,
+.left-arrow{
+    font-size: 4em;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.emoji{
+    font-size: 3em;
+    cursor: pointer;
+}
+
+.share-btn{
+   
+    grid-row: 6;
+    grid-column: 2;
+}
+.save-btn{
+   
+    grid-row: 6;
+    grid-column: 4;
+}
+.custom-img-btn{
+    grid-row: 7;
+    grid-column: 3;
+padding-top: 25px;
+height: min-content;
+}
+
+button.share-btn,
+button.save-btn,
+button.custom-img-btn{
+    min-width: 60px;
+    min-height: 60px;
+    max-width: 100px;
+    max-height: 100px;
+
+    background-color: var(--clr1);
+    place-self: center;
+}
+
+
+input.file-input{
+    width: 130%;
+    height: 150%;
+    position: relative;
+    top: -60px;
+    left: -10px;
+    opacity: 0;
+    cursor: pointer;
+}
